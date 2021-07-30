@@ -10,8 +10,8 @@ import xss from 'xss-clean';
 import rateLimit from 'express-rate-limit';
 import hpp from 'hpp';
 import helmet from 'helmet';
-import connectDB from './conf/db';
-
+import connectDB from './database/db';
+import users from './app/routes/userRoute';
 // require('dotenv').config({ path: __dirname + '/config/config.env' });
 export default function createServer() {
   // Load env vars
@@ -23,7 +23,6 @@ export default function createServer() {
   //   const bootcamps = require('./routes/bootcamps');
   //   const courses = require('./routes/courses');
   //   const auth = require('./routes/auth');
-  //   const users = require('./routes/users');
   //   const reviews = require('./routes/reviews');
 
   const app = express();
@@ -83,12 +82,12 @@ export default function createServer() {
   //   app.use(`${version}/bootcamps`, bootcamps);
   //   app.use(`${version}/courses`, courses);
   //   app.use(`${version}/auth`, auth);
-  //   app.use(`${version}/users`, users);
+  app.use(`${version}/users`, users);
   //   app.use(`${version}/reviews`, reviews);
 
-  // app.get('/', (request, response) => {
-  //   response.send('Hello from express');
-  // });
+  app.get('/', (request, response) => {
+    response.send('Hello from express');
+  });
 
   //Error Handler Middleware
   //   app.use(errorHandler);

@@ -6,7 +6,7 @@ const app = createServer();
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(
-    colors.yellow.underline(`service is running on http://locahost:${PORT}`),
+    colors.yellow.underline(`service is running on http://localhost:${PORT}`),
   );
 });
 
