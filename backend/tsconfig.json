@@ -78,7 +78,7 @@
     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["node_modules", "@types", ]
+  // "exclude": ["node_modules", "@types", ]
   // "include": ["app/**/*"],
   // "exclude": ["node_modules", "**/*.spec.ts", "**/*.d.ts"]
 }
