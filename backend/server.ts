@@ -1,5 +1,5 @@
 import createServer from './createServer';
-import { HttpException } from './interfaces/helperClasses/HttpException';
+import { HttpException } from './helper/classes/HttpException';
 var colors = require('colors/safe');
 
 const app = createServer();

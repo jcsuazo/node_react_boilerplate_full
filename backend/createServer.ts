@@ -1,6 +1,7 @@
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
+// const dotenv = require('dotenv');
 import cookieParse from 'cookie-parser';
 import morgan from 'morgan';
 import cors from 'cors';
@@ -9,13 +10,14 @@ import xss from 'xss-clean';
 import rateLimit from 'express-rate-limit';
 import hpp from 'hpp';
 import helmet from 'helmet';
+import connectDB from './conf/db';
 
+// require('dotenv').config({ path: __dirname + '/config/config.env' });
 export default function createServer() {
   // Load env vars
-  dotenv.config({ path: './config/config.env' });
-
+  dotenv.config();
   // Connect to database
-  //   connectDB();
+  connectDB();
 
   // Route files
   //   const bootcamps = require('./routes/bootcamps');
