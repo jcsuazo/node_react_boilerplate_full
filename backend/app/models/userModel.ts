@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import { userInterface } from '../interfaces/UserInterface';
-import { Document, Model, model, Types, Schema, Query } from 'mongoose';
+import { model, Schema } from 'mongoose';
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 

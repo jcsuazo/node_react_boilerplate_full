@@ -85,7 +85,7 @@ export default function createServer() {
   app.use(`${version}/users`, users);
   //   app.use(`${version}/reviews`, reviews);
 
-  app.get('/', (request, response) => {
+  app.get('/', (_, response) => {
     response.send('Hello from express');
   });
 

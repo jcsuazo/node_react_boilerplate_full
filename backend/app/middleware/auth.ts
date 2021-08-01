@@ -6,7 +6,7 @@ import { Request, Response, NextFunction } from 'express';
 
 // Protect routes
 export const protect = asyncHandler(
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req: Request, _: Response, next: NextFunction) => {
     let token;
 
     if (
@@ -45,7 +45,7 @@ export const protect = asyncHandler(
 
 // Grant access to specific roles
 export const authorize = (...roles: string[]) => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: Request, _: Response, next: NextFunction) => {
     if (!roles.includes(req.user?.role || '')) {
       return next(
         new ErrorResponse(

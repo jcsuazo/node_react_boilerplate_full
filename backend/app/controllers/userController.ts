@@ -1,13 +1,13 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel';
 // import generateToken from '../../helper/utils/generateToken';
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import fs from 'fs';
 
 // @desc      Get all users
 // @route     GET /api/v1/users
 // @access    Private/Admin
-export const getUsers = asyncHandler(async (req: Request, res: Response) => {
+export const getUsers = asyncHandler(async (_: Request, res: Response) => {
   res.status(200).json(res.advancedResults);
 });
 
@@ -65,7 +65,7 @@ export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
 // @desc      seed users
 // @route     DELETE /api/v1/users/seeder
 // @access    Public
-export const seedUsers = asyncHandler(async (req: Request, res: Response) => {
+export const seedUsers = asyncHandler(async (_: Request, res: Response) => {
   const users = JSON.parse(
     fs.readFileSync(
       `/Users/applab/learning/node/node_react_boilerplate_full/backend/_data/users.json`,

@@ -1,5 +1,3 @@
-import { Query } from 'mongoose';
-import { ModelTypes } from '../types/models';
 import PaginateInterface from './PaginateInterface';
 import { userInterface } from './UserInterface';
 
