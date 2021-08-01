@@ -1,9 +1,9 @@
 export default interface PaginateInterface {
-  next: {
+  next?: {
     page: number;
     limit: number;
   };
-  prev: {
+  prev?: {
     page: number;
     limit: number;
   };

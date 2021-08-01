@@ -1,6 +1,5 @@
 import { ModelTypes } from '../types/models';
 import { Request, Response, NextFunction } from 'express';
-import { Document } from 'mongoose';
 import PaginateInterface from '../interfaces/PaginateInterface';
 
 const advancedResults =

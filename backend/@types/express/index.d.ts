@@ -1,7 +1,7 @@
 import * as express from 'express';
-import { UserDocument } from '../../backend/models/userModel';
-import AdvancedResultsInterface from '../../backend/app/interfaces/AdvancedResultsInterface';
-import { userInterface } from '../../backend/app/interfaces/UserInterface';
+// import { UserDocument } from '../../backend/models/userModel';
+import AdvancedResultsInterface from '../../app/interfaces/AdvancedResultsInterface';
+import { userInterface } from '../../app/interfaces/UserInterface';
 
 declare global {
   namespace Express {
@@ -9,7 +9,7 @@ declare global {
       advancedResults: AdvancedResultsInterface;
     }
     interface Request {
-      user: userInterface;
+      user: userInterface | null;
     }
   }
 }

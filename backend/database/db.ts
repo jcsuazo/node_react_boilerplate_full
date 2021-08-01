@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 let colors = require('colors/safe');
 // dotenv.config({ path: './config/config.env' });
 
-const connectDB = async () => {
+const connectDB = async (): Promise<void> => {
   const conn = await mongoose.connect(process.env.MONGO_URI as string, {
     useNewUrlParser: true,
     useCreateIndex: true,

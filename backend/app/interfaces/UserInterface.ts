@@ -6,10 +6,12 @@ export interface userInterface extends Document {
   role?: string;
   email: string;
   password: string;
-  resetPasswordToken: String;
-  resetPasswordExpire: Date;
-  confirmEmailToken: String;
+  // resetPasswordToken?: String;
+  // resetPasswordExpire?: Date;
+  // confirmEmailToken?: String;
   createdAt?: Date;
+  resetPasswordToken?: string;
+  resetPasswordExpire?: number;
 }
 
 // export interface UserDocument extends IUser, Document {

@@ -1,7 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel';
-import generateToken from '../../helper/utils/generateToken';
+// import generateToken from '../../helper/utils/generateToken';
 import { Request, Response, NextFunction } from 'express';
+import fs from 'fs';
 
 // @desc      Get all users
 // @route     GET /api/v1/users
@@ -54,6 +55,27 @@ export const updateUser = asyncHandler(async (req: Request, res: Response) => {
 // @access    Private/Admin
 export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
   await User.findByIdAndDelete(req.params.id);
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});
+
+// @desc      seed users
+// @route     DELETE /api/v1/users/seeder
+// @access    Public
+export const seedUsers = asyncHandler(async (req: Request, res: Response) => {
+  const users = JSON.parse(
+    fs.readFileSync(
+      `/Users/applab/learning/node/node_react_boilerplate_full/backend/_data/users.json`,
+      'utf-8',
+    ),
+    // fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8'),
+  );
+  await User.deleteMany();
+  console.log(users);
+  await User.create(users);
 
   res.status(200).json({
     success: true,

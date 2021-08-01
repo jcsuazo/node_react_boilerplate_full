@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon -r tsconfig-paths/register server.ts",
+    "dev": "NODE_ENV=dev nodemon -r ./server.ts",
+    "seeder": "NODE_ENV=dev nodemon -r tsconfig-paths/register seeder.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
